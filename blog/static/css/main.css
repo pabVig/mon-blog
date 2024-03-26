@@ -3305,3 +3305,19 @@ input, select, textarea {
 				}
 
 	}
+
+
+
+/* CSS pour la barre latérale */
+.sidebar {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 200px;
+    background-color: #333;
+    padding-top: 50px;
+}
+#main {
+    margin-left: 200px; /* Ajustez cette valeur en fonction de la largeur de votre barre latérale */
+}
+

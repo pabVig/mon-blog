@@ -1,0 +1,100 @@
+﻿{% load static %}
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>À propos de notre site</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="{% static 'css/main.css' %}" />
+    <style>
+        /* Styles pour la barre latérale */
+        .sidebar {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 200px; /* Largeur de la barre latérale */
+            height: 100%;
+            background-color: #333; /* Couleur de fond de la barre latérale */
+            padding-top: 50px; /* Espace pour le contenu en haut de la barre latérale */
+            z-index: 999; /* Assurez-vous que la barre latérale est au-dessus du contenu */
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sidebar ul li {
+            padding: 10px;
+            text-align: center;
+        }
+
+        .sidebar ul li a {
+            color: white;
+            text-decoration: none;
+            display: block;
+        }
+
+        .sidebar ul li a:hover {
+            background-color: #555; /* Couleur de fond au survol */
+        }
+
+        /* Assurez-vous que le contenu ne soit pas recouvert par la barre latérale */
+        #header {
+            margin-left: 200px; /* Ajustez cette valeur en fonction de la largeur de votre barre latérale */
+        }
+    </style>
+</head>
+<body class="is-preload">
+
+<!-- Barre latérale -->
+<div class="sidebar">
+    <ul>
+        <li><a href="{% url 'index' %}">Accueil</a></li>
+        <li><a href="{% url 'histoire' %}">Histoire de l'OM</a></li>
+	<li><a href="{% url 'calendrier' %}">Calendrier des matchs</a></li>
+        <li><a href="{% url 'galerie' %}">Galerie photo</a></li>
+	<li><a href="{% url 'about' %}">À propos</a></li>
+	
+	<!-- Ajoutez d'autres liens vers vos pages ici -->
+    </ul>
+</div>
+
+<!-- Header -->
+
+
+<!-- Main -->
+<div id="main">
+
+
+
+    <section class="container">
+        <h2>Contactez-nous</h2>
+        <p>Si vous avez des questions ou des remarques, vous pouvez nous joindre sur nos réseaux :</p>
+        <ul class="social-icons">
+            <li><a href="https://twitter.com/PayetBallonDor_" target="_blank"><i class="fab fa-twitter"></i> Twitter</a></li>
+            <li><a href="https://www.instagram.com/pablo.vignoli?igsh=dzRmZHpvb3JwaDE0" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
+            <li><a href="https://www.linkedin.com/in/pablo-vignoli-39a7b1176/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+        </ul>
+    </section>
+
+    <section class="container">
+        <h3>Données utilisées pour les analyses</h3>
+        <p>Voici les sources de données que nous avons utilisées pour réaliser nos analyses :</p>
+        <ul>
+            <li><a href="https://www.footballstats.fr/historique-OM.html" target="_blank">footballstats.fr</a></li>
+
+            <!-- Ajoutez d'autres sources de données si nécessaire -->
+        </ul>
+    </section>
+
+
+<section class="container">
+        <h3>Site officiel de l'Olympique de Marseille</h3>
+         <ul>
+            <li><a href="https://www.om.fr/fr" target="_blank">om.fr</a></li>
+
+            <!-- Ajoutez d'autres sources de données si nécessaire -->
+        </ul>
+    </section>

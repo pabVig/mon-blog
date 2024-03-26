@@ -1,0 +1,152 @@
+﻿{% load static %}
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Histoire de l'OM</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="{% static 'css/main.css' %}" />
+    <style>
+        /* Styles pour la barre latérale */
+        .sidebar {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 200px; /* Largeur de la barre latérale */
+            height: 100%;
+            background-color: #333; /* Couleur de fond de la barre latérale */
+            padding-top: 50px; /* Espace pour le contenu en haut de la barre latérale */
+            z-index: 999; /* Assurez-vous que la barre latérale est au-dessus du contenu */
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sidebar ul li {
+            padding: 10px;
+            text-align: center;
+        }
+
+        .sidebar ul li a {
+            color: white;
+            text-decoration: none;
+            display: block;
+        }
+
+        .sidebar ul li a:hover {
+            background-color: #555; /* Couleur de fond au survol */
+        }
+
+        /* Assurez-vous que le contenu ne soit pas recouvert par la barre latérale */
+        #header {
+            margin-left: 200px; /* Ajustez cette valeur en fonction de la largeur de votre barre latérale */
+        }
+    </style>
+</head>
+<body class="is-preload">
+
+
+<!-- Barre latérale -->
+<div class="sidebar">
+    <ul>
+        <li><a href="{% url 'index' %}">Accueil</a></li>
+        <li><a href="{% url 'histoire' %}">Histoire de l'OM</a></li>
+	<li><a href="{% url 'calendrier' %}">Calendrier des matchs</a></li>
+        <li><a href="{% url 'galerie' %}">Galerie photo</a></li>
+	<li><a href="{% url 'about' %}">À propos</a></li>
+	
+	<!-- Ajoutez d'autres liens vers vos pages ici -->
+    </ul>
+</div>
+
+<!-- Header -->
+<div id="header" style="background-image: url('{% static 'images/om_fond_2.png' %}');
+                     background-size: cover;
+                     background-position: center;
+                     margin-left: 200px;"> <!-- Ajustez la marge pour éviter que le contenu ne soit recouvert -->
+    <span class="logo icon fa-regular fa-futbol"></span>
+    <h1 style="color: black;">Histoire de l'Olympique de Marseille</h1>
+    <p style="color: black">Une rétrospective des moments les plus mémorables de l'OM</p>
+</div>
+
+<!-- Main -->
+<div id="main">
+
+    <header class="major container medium">
+        <h2>Une brève rétrospective</h2>
+    </header>
+
+    <div class="box alt container">
+    <section class="feature left">
+        <a class="image" id="D1_D2" href="{% static 'images/rene.jpg' %}" target="_blank">
+            <img src="{% static 'images/rene.jpg' %}" alt="Création de l'OM" style="width: 100%; height: auto;" />
+        </a>
+        <div class="content">
+            <h3>Création et débuts</h3>
+            <p>L'Olympique de Marseille a été fondé en 1899 par René Dufaure de Montmirail, un riche homme d'affaires marseillais.</p>
+        </div>
+    </section>
+
+    <section class="feature right">
+        <a class="image" id="pos_par_champ" href="{% static 'images/2p.jpg' %}" target="_blank">
+            <img src="{% static 'images/2p.jpg' %}" alt="Grandes années de l'OM" style="width: 50%; height: 50%;" />
+        </a>
+        <div class="content">
+            <h3>Grandes années de l'OM</h3>
+            <p>Dans les années 1990, l'OM a connu une période de grande réussite sous la présidence de Bernard Tapie, remportant notamment la Ligue des Champions en 1993.</p>
+        </div>
+    </section>
+
+    <section class="feature left">
+        <a class="image" id="afflu_annéee" href="{% static 'images/om_mnt.jpg' %}" target="_blank">
+            <img src="{% static 'images/om_mnt.jpg' %}" alt="OM actuellement" style="width: 100%; height: auto;" />
+        </a>
+        <div class="content">
+            <h3>OM actuellement</h3>
+            <p>Aujourd'hui, l'OM est l'un des clubs les plus emblématiques de France, évoluant en Ligue 1 et continuant à attirer des fans passionnés du monde entier.</p>
+        </div>
+    </section>
+
+<section class="feature right">
+    <a class="image" href="{% static 'images/om_logo.jpg' %}" target="_blank"><img src="{% static 'images/om_logo.jpg' %}" alt="Faits marquants de l'OM" style="width: 100%; height: auto;" /></a>
+    <div class="content">
+        <h3>Faits marquants</h3>
+        <ul>
+            <li>Création et débuts de l'OM en 1899.</li>
+            <li>Victoire en Ligue des Champions en 1993.</li>
+            <li>Scandale de corruption en 1993, menant à la relégation en Division 2.</li>
+                        
+            <li>Retour en Ligue 1 en 1996.</li>
+            <li>Participation à la finale de la Coupe de l'UEFA en 1999.</li>
+            <li>Retour en Ligue 1 après le rachat par Louis-Dreyfus en 1996.</li>
+            <li>Participation à la finale de la Coupe de l'UEFA en 1999.</li>
+            <li>Rachat du club par Robert Louis-Dreyfus en 1996.</li>
+            <li>Changement de nom du stade pour "Stade Orange Vélodrome" en 2016.</li>
+            <li>Transfert record de Dimitri Payet en 2013.</li>
+            <li>Renforcement de l'effectif avec l'arrivée de Florian Thauvin en 2013.</li>
+            <li>Élection de Marcelo Bielsa comme entraîneur en 2014.</li>
+            <li>Participation à la finale de la Ligue Europa en 2018.</li>
+            <li>Retour à la Ligue des Champions en 2012.</li>
+            <li>Victoire en Coupe de France en 2010.</li>
+            <li>Participation à plusieurs finales de la Coupe de France.</li>
+            <li>Titre de champion de France en 2010.</li>
+            <li>Acquisition par Frank McCourt en 2016.</li>
+            <li>Participation au Mondial des clubs de la FIFA en 2010.</li>
+            <li>Record de matchs sans défaite en Ligue 1 en 2020-2021.</li>
+            
+        </ul>
+    </div>
+</section>
+
+<!-- Scripts -->
+<script src="{% static 'js/jquery.min.js' %}"></script>
+<script src="{% static 'js/browser.min.js' %}"></script>
+<script src="{% static 'js/breakpoints.min.js' %}"></script>
+<script src="{% static 'js/util.js' %}"></script>
+<script src="{% static 'js/main.js' %}"></script>
+
+</body>
+</html>

@@ -1,4 +1,4 @@
-{% load static %}
+﻿{% load static %}
 <!DOCTYPE HTML>
 <!--
     Directive by HTML5 UP
@@ -7,24 +7,74 @@
 -->
 <html>
 <head>
-    <title>Analyse statistiques de l'OM</title>
+    <title>Analyses statistiques de l'OM</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="{% static 'css/main.css' %}" />
+    <style>
+        /* Styles pour la barre latérale */
+        .sidebar {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 200px; /* Largeur de la barre latérale */
+            height: 100%;
+            background-color: #333; /* Couleur de fond de la barre latérale */
+            padding-top: 50px; /* Espace pour le contenu en haut de la barre latérale */
+            z-index: 999; /* Assurez-vous que la barre latérale est au-dessus du contenu */
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sidebar ul li {
+            padding: 10px;
+            text-align: center;
+        }
+
+        .sidebar ul li a {
+            color: white;
+            text-decoration: none;
+            display: block;
+        }
+
+        .sidebar ul li a:hover {
+            background-color: #555; /* Couleur de fond au survol */
+        }
+
+        /* Assurez-vous que le contenu ne soit pas recouvert par la barre latérale */
+        #header {
+            margin-left: 200px; /* Ajustez cette valeur en fonction de la largeur de votre barre latérale */
+        }
+    </style>
 </head>
 <body class="is-preload">
+
+<!-- Barre latérale -->
+<div class="sidebar">
+    <ul>
+        <li><a href="{% url 'index' %}">Accueil</a></li>
+        <li><a href="{% url 'histoire' %}">Histoire de l'OM</a></li>
+	<li><a href="{% url 'calendrier' %}">Calendrier des matchs</a></li>
+        <li><a href="{% url 'galerie' %}">Galerie photo</a></li>
+	<li><a href="{% url 'about' %}">À propos</a></li>
+	
+	<!-- Ajoutez d'autres liens vers vos pages ici -->
+    </ul>
+</div>
 
 <!-- Header -->
 <div id="header" style="background-image: url('{% static 'images/om_fond_2.png' %}');
                      background-size: cover;
-                     background-position: center;">
+                     background-position: center;
+                     margin-left: 200px;"> <!-- Ajustez la marge pour éviter que le contenu ne soit recouvert -->
     <span class="logo icon fa-regular fa-futbol"></span>
     <h1 style="color: black;">Bienvenue sur ce site dédié à l'OM</h1>
     <p style="color: black">Vous pouvez y trouver quelques analyses statistiques réalisées en R</p>
 </div>
-
-
-
 
 <!-- Main -->
 <div id="main">
@@ -38,69 +88,63 @@
     </header>
 
     <div class="box alt container">
-    	<section class="feature left">
-        	<a href="#"  class="image" id="D1_D2"><img src="{% static 'images/D1_D2.png' %}" alt="Image description" style="width: 100%; height: 50%;"/></a>
-        	<div class="content">
-            	<h3>Premièrement la division</h3>
-            	<p>Voici un graphes présentant la division à laquelle l'OM a participé depuis 1900</p>
-        	</div>
-    	</section>
-    </div>
+        <section class="feature left">
+            <a class="image" id="D1_D2" href="{% static 'images/D1_D2.png' %}" target="_blank"><img src="{% static 'images/D1_D2.png' %}" alt="Description de l'image" style="width: 100%; height: 50%;"/></a>
+            <div class="content">
+                <h3>Division</h3>
+                <p>Voici un graphique présentant la division à laquelle l'OM a participé depuis 1900.</p>
+            </div>
+        </section>
 
-	<section class="feature right">
-            <a  href="#"  class="image" id="pos_par_champ"><img src="{% static 'images/pos_par_champ.png' %}" alt="Image description" style="max-width: 100%; height: auto;"/></a>
+
+        <section class="feature right">
+            <a  class="image" id="pos_par_champ" href="{% static 'images/pos_par_champ.png' %}" target="_blank"><img src="{% static 'images/pos_par_champ.png' %}" alt="Description de l'image" style="width: 100%; height: 50%;"/></a>
             <div class="content">
                 <h3>Classement par saison</h3>
-                <p>Sur ce graphique nous pouvons suivre les résultats de l'OM dans leur championnat en fonction des saisons.</p>
+                <p>Sur ce graphique, nous pouvons suivre les résultats de l'OM dans leur championnat en fonction des saisons.</p>
             </div>
         </section>
-        </section>
-
-	<section class="feature left">
-            <a  href="#"  class="image" id="afflu_annéee"><img src="{% static 'images/afflu_annéee.png' %}" alt="Image description" style="width: 100%; height: 50%;"/></a>
-            <div class="content">
-                <h3>Affluence par saison</h3>
-                <p>Nous pouvons voir sur ce graphique l'évolution de l'affluence par saison. Le stade Vélodrome ayant été refait en 2014 et pouvant désormais acceuillir 67 000 le nombre de spectateurs est depuis souvent plus élevé qu'avant. La saison 2021 n'as pas été prise en compte dans ce graphique à cause de la crise du COVID-19.</p>
-            </div>
-        </section>
-	<section class="feature right">
-    		<a  href="#"  class="image" id="CdL"><img src="{% static 'images/CdL.png' %}" alt="Image description" class="custom-image" style="width: 100%; height: 50%;"/></a>
-    		<div class="content">
-        		<h3>Résultat en Coupe de la Ligue</h3>
-        		<p>La coupe de la Ligue à été créee en 1994, l'Olympique de Marseille à remporté cette compétition 3 fois, en 2010, 2011 et 2012. À savoir, cette coupe à été arretée en 2020.</p>
-    		</div>
-	</section>
 
         <section class="feature left">
-            <a  href="#"  class="image" id="CdF"><img src="{% static 'images/CdF.png' %}" alt="Image description" style="width: 50%; height: 50%;"/></a>
+            <a  class="image" id="afflu_annéee" href="{% static 'images/afflu_annéee.png' %}" target="_blank"><img src="{% static 'images/afflu_annéee.png' %}" alt="Description de l'image" style="width: 100%; height: 50%;"/></a>
             <div class="content">
-                <h3>Résultat en Coupe de France</h3>
-                <p>La coupe de France est une compétition historique créee en 1917 qui réunit tout les clubs de France du petit club amateur jusqu'au club historique de notre championnat. L'OM à remporté cette compétition 10 fois. La dernière remonte à 1989 !</p>
+                <h3>Affluence par saison</h3>
+                <p>Nous pouvons voir sur ce graphique l'évolution de l'affluence par saison. Le stade Vélodrome ayant été refait en 2014 et pouvant désormais accueillir 67 000 personnes, le nombre de spectateurs est depuis souvent plus élevé qu'avant. La saison 2021 n'a pas été prise en compte dans ce graphique à cause de la crise du COVID-19.</p>
+            </div>
+        </section>
+        <section class="feature right">
+            <a  class="image" id="CdL" href="{% static 'images/CdL.png' %}"><img src="{% static 'images/CdL.png' %}" alt="Description de l'image" class="custom-image" style="width: 100%; height: 50%;"/></a>
+            <div class="content">
+                <h3>Résultat en Coupe de la Ligue</h3>
+                <p>La Coupe de la Ligue a été créée en 1994. L'Olympique de Marseille l'a remportée 3 fois, en 2010, 2011 et 2012. À noter que cette coupe a été arrêtée en 2020.</p>
             </div>
         </section>
 
-
-	
-
-	
+        <section class="feature left">
+            <a  class="image" id="CdF" href="{% static 'images/CdF.png' %}"><img src="{% static 'images/CdF.png' %}" alt="Description de l'image" style="width: 100%; height: 50%;"/></a>
+            <div class="content">
+                <h3>Résultat en Coupe de France</h3>
+                <p>La Coupe de France est une compétition historique créée en 1917 qui réunit tous les clubs de France, du petit club amateur jusqu'au club historique de notre championnat. L'OM l'a remportée 10 fois. La dernière victoire remonte à 1989 !</p>
+            </div>
+        </section>
     </div>
 
+
+
     <footer class="major container medium">
-        <h3>Get shady with science</h3>
-        <p>Toutes les analyses faites ici ne sont pas exhaustive. En effet de part le manque de données sur le site où ont été recupérés les données mais aussi par la simplicité des analyses et graphiques réalisés ce n'est as necéssairement reprsentatif des résultats du club dans toutes les compétitions mentionnées.</p>
-        <ul class="actions special">
-            <li><a href="#" class="button">Join our crew</a></li>
-        </ul>
+        <h3>Nota Bene</h3>
+        <p>Toutes les analyses faites ici ne sont pas exhaustives. En raison du manque de données sur le site où ont été récupérées les données, ainsi que de la simplicité des analyses et graphiques réalisés, cela n'est pas nécessairement représentatif des résultats du club dans toutes les compétitions mentionnées.</p>
 
 
-	<ul class="social-icons">
-        <li><a href="lien_vers_facebook"><span class="icon fa-brands fa-facebook"></span></a></li>
-        <li><a href="lien_vers_twitter"><span class="icon fa-brands fa-twitter"></span></a></li>
-        <li><a href="lien_vers_instagram"><span class="icon fa-brands fa-instagram"></span></a></li>
-    </ul>
+        
     </footer>
 
-</div>
+
+    
+
+
+
+
 
 
 

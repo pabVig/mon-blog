@@ -1,0 +1,130 @@
+﻿{% load static %}
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galerie de photos - Olympique de Marseille</title>
+    <!-- Inclure vos feuilles de style et scripts JavaScript nécessaires -->
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+    <style>
+        /* Styles pour la barre latérale */
+        .sidebar {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 200px; /* Largeur de la barre latérale */
+            height: 100%;
+            background-color: #333; /* Couleur de fond de la barre latérale */
+            padding-top: 50px; /* Espace pour le contenu en haut de la barre latérale */
+            z-index: 999; /* Assurez-vous que la barre latérale est au-dessus du contenu */
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sidebar ul li {
+            padding: 10px;
+            text-align: center;
+        }
+
+        .sidebar ul li a {
+            color: white;
+            text-decoration: none;
+            display: block;
+        }
+
+        .sidebar ul li a:hover {
+            background-color: #555; /* Couleur de fond au survol */
+        }
+
+        /* Styles pour la galerie de photos */
+        .gallery {
+            position: relative;
+            max-width: 600px; /* Largeur maximale de la galerie */
+            margin: auto;
+        }
+
+        .gallery img {
+            max-width: 100%; /* Taille maximale de l'image */
+            height: auto;
+        }
+
+        /* Styles pour les boutons de navigation */
+        .slick-prev,
+        .slick-next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1; /* Assurer que les boutons sont au-dessus des images */
+            background: rgba(255, 255, 255, 0.5); /* Fond semi-transparent */
+            border: none;
+            cursor: pointer;
+            padding: 20px; /* Augmenter la taille des boutons */
+            font-size: 2rem; /* Augmenter la taille du texte */
+            color: black; /* Couleur des flèches */
+        }
+
+        .slick-prev {
+            left: 0;
+        }
+
+        .slick-next {
+            right: 0;
+        }
+    </style>
+</head>
+<body class="is-preload">
+
+<!-- Barre latérale -->
+<div class="sidebar">
+    <ul>
+        <li><a href="{% url 'index' %}">Accueil</a></li>
+        <li><a href="{% url 'histoire' %}">Histoire de l'OM</a></li>
+	<li><a href="{% url 'calendrier' %}">Calendrier des matchs</a></li>
+        <li><a href="{% url 'galerie' %}">Galerie photo</a></li>
+	<li><a href="{% url 'about' %}">À propos</a></li>
+	
+	<!-- Ajoutez d'autres liens vers vos pages ici -->
+    </ul>
+</div>
+
+<h1>Galerie de photos</h1>
+<!-- Insérer votre carrousel ici -->
+<div class="gallery">
+    <div><img src="{% static 'images/2p.jpg' %}" alt="Photo 1"></div>
+    <div><img src="{% static 'images/om_logo.jpg' %}" alt="Photo 2"></div>
+    <div><img src="{% static 'images/om_mnt.jpg' %}" alt="Photo 2"></div>
+    <div><img src="{% static 'images/rene.jpg' %}" alt="Photo 2"></div>
+    <div><img src="{% static 'images/om_fond.png' %}" alt="Photo 2"></div>
+    <div><img src="{% static 'images/om_fond_2.png' %}" alt="Photo 2"></div>
+    <div><img src="{% static 'images/D1_D2.png' %}" alt="Photo 2"></div>
+    <!-- Ajouter d'autres images selon vos besoins -->
+</div>
+
+<!-- Inclure jQuery (ou une autre bibliothèque JavaScript) -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!-- Inclure le plugin Slick Carousel -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
+<script>
+    $(document).ready(function(){
+        // Initialiser le carrousel avec les options nécessaires
+        $('.gallery').slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: true, // Activer les flèches de navigation
+            prevArrow: '<button type="button" class="slick-prev">&#10094;</button>',
+            nextArrow: '<button type="button" class="slick-next">&#10095;</button>',
+            fade: true
+        });
+    });
+</script>
+</body>
+</html>

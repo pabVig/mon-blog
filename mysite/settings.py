@@ -39,14 +39,14 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'mysite.urls'
-
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
             os.path.join(BASE_DIR, 'blog', 'templates'),
+            'W:\\djangogirls\\blog\\templates\\',  # Ajoutez votre répertoire ici
             # Ajoutez d'autres répertoires de templates si nécessaire
-            os.path.join(BASE_DIR, 'blog', 'templates', 'yogast'),  # Utilisation de os.path.join pour la compatibilité multiplateforme
+            
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -59,6 +59,7 @@ TEMPLATES = [
         },
     },
 ]
+
 
 WSGI_APPLICATION = 'mysite.wsgi.application'
 
@@ -114,8 +115,6 @@ STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'blog', 'static'),  # Chemin vers les fichiers statiques de votre application
-    "W:\\djangogirls\\blog\\static\\js",  # Chemin vers les fichiers JS supplémentaires
-    "W:\\djangogirls\\blog\\static\\css",
-    "W:\\djangogirls\\blog\\static\\sass",
-    "W:\\djangogirls\\blog\\static\\webfonts"  # Chemin vers les fichiers CSS supplémentaires
+    "W:\\djangogirls\\blog\\static",  # Chemin vers les fichiers JS supplémentaires
+    
 ]
